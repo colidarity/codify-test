@@ -22,7 +22,9 @@ This code has been tested in -
 
 1. Embed the call-widget js file in your HTML code.
 2. Add this code to your HTML file <code> &lt;div id="tracking-widget"&gt;&lt;/div&gt;</code> . This is a placeholder for the reporting popup widget.
-3. That's it. :thumbsup:
+3. When ever you link the tracked page on a different website, make sure you set the <code>referral_domain</code> url param in the page link to enable referer tracking.
+
+4. That's it. :thumbsup:
 
 ## Report coverage:
 

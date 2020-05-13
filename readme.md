@@ -6,6 +6,13 @@
 2. Add this code to your HTML file <code> &lt;div id="call-widget"&gt;&lt;/div&gt;</code> . This is a placeholder for the call widget.
 3. You're good to go. :thumbsup:
 
+## Development Time:
+
+1. Coding - 1 hour
+2. Testing and changes - 15 mins
+3. Documentation and comments - 15 mins
+4. Total Development time - 1 hour 30 minutes.
+
 ## Cross browser compatibility:
 
 Code is written in ES6 standard.
@@ -25,6 +32,13 @@ This code has been tested in -
 3. When ever you link the tracked page on a different website, make sure you set the <code>referral_domain</code> url param in the page link to enable referer tracking.
 
 4. That's it. :thumbsup:
+
+## Development Time:
+
+1. Coding - 1 hour 15 minutes
+2. Testing and changes - 20 mins
+3. Documentation and comments - 15 mins
+4. Total Development time - 1 hour 50 minutes.
 
 ## Report coverage:
 

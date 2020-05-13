@@ -39,9 +39,9 @@ const renderWidget = (response) => {
 };
 
 const renderStyles = () => {
-  var head = document.getElementsByTagName('head')[0];
+  const headElement = document.getElementsByTagName('head')[0];
   // Generate and append styles to the head tag
-  head.innerHTML += `<style>
+  headElement.innerHTML += `<style>
       #call-widget {
         position: fixed;
         bottom: 120px;

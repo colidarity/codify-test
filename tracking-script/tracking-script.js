@@ -1,7 +1,7 @@
 const getBrowser = (userAgent) => {
   // These validations are made according to MDNs definition of user agent strings and were working at the time of impllementation. Useragent strings are subject to change and hence should be monitored.
   // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent
-
+  // Chromium is untested from my end as I couldn't get to install it on my machine. Rest all browsers are detected fine.
   const chrome =
     userAgent.includes('Chrome') &&
     !userAgent.includes('Chromium') &&
@@ -61,9 +61,12 @@ const detectMobile = (userAgent) => {
   });
 };
 
+// Setting visit counter to localstorage as localstorage is much eeasier to manipulate in code than cookies and retains values ever after ending the session unlike session storage.
+// Also the data is not sensitive enough to be stored in a (HTTP Only / Secure) cookie.
 const setVisitCounter = (updatedVisitCounter) =>
   localStorage.setItem('visit-counter', updatedVisitCounter);
 
+// Save to session storage as session resets on closing the tab
 const setRefer = (referer) => sessionStorage.setItem('referer', referer);
 
 const getRefererDomain = () => {
@@ -75,6 +78,7 @@ const getRefererDomain = () => {
     return refererFromSessionStorage;
   }
 
+  // Save referer to session storage in case the referer is not available in the url further.
   setRefer(refererFromURL);
   return refererFromURL;
 };
@@ -91,6 +95,5 @@ const checkIfReturningUser = () => {
   const browser = getBrowser(userAgent);
   const isMobileDevice = detectMobile(userAgent);
   const isReturningUser = checkIfReturningUser();
-  const getReferalDomain = getRefererDomain();
-  console.log({ browser, isMobileDevice, isReturningUser });
+  const refererDomain = getRefererDomain();
 })();
